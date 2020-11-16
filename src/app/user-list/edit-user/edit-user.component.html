@@ -1,0 +1,13 @@
+<div class="card-body">
+  <form  #editForm="ngForm" (ngSubmit)="Update()">
+    <div class="form-group">
+    <label for="UsernameInput">UserName:</label>
+    <input type="text" class="form-control" name="username" [(ngModel)]="user.username">
+    </div>
+    <div class="form-group">
+    <label for="emailInput">Email:</label>
+    <input type="text" class="form-control" name="email" [(ngModel)]="user.email">
+    </div>
+   <button class="btn btn-success btn-lg btn-block" type="submit" (click)="Update()">Update</button>
+  </form>
+</div>
