@@ -1,3 +1,6 @@
+import { NewProductComponent } from './products-list/new-product/new-product.component';
+import { EditProductComponent } from './products-list/edit-product/edit-product.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -11,11 +14,11 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { AuthModule } from './auth/auth.module';
 import { ServicesComponent } from './services/services.component';
-import { CompaniesListComponent } from './companies-list/companies-list.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { EditUserComponent } from './user-list/edit-user/edit-user.component';
-import { EditCompaniesComponent } from './companies-list/edit-companies/edit-companies.component';
-import { NewCompaniesComponent } from './companies-list/new-companies/new-companies.component';
+import { UserProductsComponent } from './user-products/user-products.component';
+import { UserCartComponent } from './user-cart/user-cart.component';
+
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { NewCompaniesComponent } from './companies-list/new-companies/new-compan
     HomeComponent,
     ProfileComponent,
     ServicesComponent,
-    CompaniesListComponent,
     UserListComponent,
     EditUserComponent,
-    EditCompaniesComponent,
-    NewCompaniesComponent,
+    ProductsListComponent,
+    EditProductComponent,
+    NewProductComponent,
+    UserProductsComponent,
+    UserCartComponent
+
   ],
   imports: [
     BrowserModule,

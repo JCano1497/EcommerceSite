@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
   <div class="container">
-    <a routerLink="/" class="navbar-brand" routerLinkActive="active">Admin Portal</a>
+    <a routerLink="/" class="navbar-brand" routerLinkActive="active">Ecommerce Site</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <ng-container *ngIf="!auth.isAuthenticated()">
@@ -18,7 +18,7 @@
 
         <ng-container *ngIf="auth.isAuthenticated() && auth.isAdmin()">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/companies-list']">Manage Products</a>
+            <a class="nav-link" [routerLink]="['/products-list']">Manage Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/user-list']">Manage Users</a>
@@ -36,14 +36,10 @@
         </ng-container>
         <ng-container *ngIf="auth.isAuthenticated() && !auth.isAdmin()">
           <li class="nav-item">
-            <a class="nav-link">
-              Poducts
-            </a>
+            <a class="nav-link" [routerLink]="['/userProducts']">Poducts</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">
-              Checkout
-            </a>
+            <a class="nav-link" [routerLink]="['/userCart']">Checkout</a>
           </li>
           <li class="nav-item">
             <a class="nav-link pointer" (click)="logout()">

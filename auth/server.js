@@ -30,7 +30,7 @@ let corsOptions = {
 
 app.use(cors(corsOptions))
 app.use('/api/users', userRoute);
-require('./routes/companyRoute.js')(app);
+require('./routes/productRoute.js')(app);
 require('./routes/UserListRoute.js')(app);
 
 app.listen(PORT, () => {

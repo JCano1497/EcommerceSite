@@ -1,10 +1,10 @@
 
 
-const Company = require('../models/company.js');
+const Product = require('../models/product.js');
 
 
 exports.findAll = (req, res) => {
-    Company.find()
+    Product.find()
         .then(products => {
             res.send(products);
         }).catch(err => {
@@ -15,29 +15,29 @@ exports.findAll = (req, res) => {
 };
 
 exports.findById = (req, res) => {
-    Company.findById(req.params.id, (err, company) => {
+    Product.findById(req.params.id, (err, product) => {
         if (err) throw err;
-        res.send(company);
+        res.send(product);
     })
 };
 
-exports.addCompany = (req, res) => {
-    Company.create(req.body, (err, data) => {
+exports.addProduct = (req, res) => {
+    Product.create(req.body, (err, data) => {
         if (err) { throw err; }
         res.send(data);
     })
 };
 
 exports.removeById = (req, res) => {
-    Company.findByIdAndRemove(req.params.id, (err, company) => {
+    Product.findByIdAndRemove(req.params.id, (err, product) => {
         if (err) throw err;
-        res.send(company);
+        res.send(product);
     })
 }
 
 exports.updateById = (req, res) => {
-    Company.findByIdAndUpdate(req.params.id, req.body, (err, company) => {
+    Product.findByIdAndUpdate(req.params.id, req.body, (err, product) => {
         if (err) throw err;
-        res.send(company);
+        res.send(product);
     })
 }

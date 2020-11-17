@@ -1,0 +1,40 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="container">
+  <div class="table-title">
+    <div class="row">
+      <div class="col-xs-6">
+        <h2>Current <b>Products</b></h2>
+      </div>
+    </div>
+  </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Product Name</th>
+                <th>Company Name</th>
+                <th></th>
+                <th>Product Price</th>
+                <th>Product Quantity</th>
+                <th>Buy</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products;let rowIndex=index">
+                <td>{{rowIndex+1}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.company}}</td>
+                <td>
+                  <img src={{product.image}} width="250" height="100">
+                </td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>
+                  <a [routerLink]="['/userCart',{id:product._id}]">Buy Now</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
