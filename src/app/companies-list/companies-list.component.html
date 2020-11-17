@@ -1,0 +1,38 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="container">
+  <div class="table-title">
+    <div class="row">
+      <div class="col-xs-6">
+        <h2>Manage <b>Products</b></h2>
+      </div>
+      <div class="align-self-end ml-auto">
+        <span [routerLink]="['/new-companies/']"  class="btn btn-success p-3" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></span>
+      </div>
+    </div>
+  </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let company of companies;let rowIndex=index">
+                <td>{{rowIndex+1}}</td>
+                <td>{{company.name}}</td>
+                <td>{{company.price}}</td>
+                <td>{{company.quantity}}</td>
+                <span class="edit" [routerLink]="['/edit-companies/', company._id]">
+                <button type="button" class="btn btn-primary mr-1">Edit</button>
+                </span>
+                <span class="delete" (click)="removeCompany(company, rowIndex)">
+                <button type="button" class="btn btn-danger mr-1">Delete</button>
+                </span>
+            </tr>
+        </tbody>
+    </table>
+</div>
