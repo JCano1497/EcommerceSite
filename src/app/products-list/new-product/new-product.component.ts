@@ -15,8 +15,8 @@ export class NewProductComponent implements OnInit {
   product: product = {
     _id: '',
     name: '',
-    price: '',
-    quantity: '',
+    price: 0,
+    quantity: 0,
     company: '',
     image: '',
   }

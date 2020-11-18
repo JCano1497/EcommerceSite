@@ -13,8 +13,8 @@ export class EditProductComponent implements OnInit {
   product: product = {
     _id: '',
     name: '',
-    price: '',
-    quantity: '',
+    price: 0,
+    quantity: 0,
     company: '',
     image: '',
   }

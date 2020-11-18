@@ -1,3 +1,4 @@
+import { CheckoutComponent } from './checkout/checkout.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
 import { UserProductsComponent } from './user-products/user-products.component';
 import { ProductsListComponent } from './products-list/products-list.component';
@@ -24,8 +25,9 @@ const routes: Routes = [
   { path: 'edit-user/:id', component: EditUserComponent, canActivate: [AuthGuard]},
   { path: 'edit-product/:id', component: EditProductComponent, canActivate: [AuthGuard]},
   { path: 'new-product', component: NewProductComponent, canActivate: [AuthGuard]},
-  { path: 'userProducts', component: UserProductsComponent, canActivate: [AuthGuard]},
-  { path: 'userCart', component: UserCartComponent, canActivate: [AuthGuard]}
+  { path: 'userProducts', component: UserProductsComponent},
+  { path: 'userCart', component: UserCartComponent},
+  { path: 'Checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
 
 ];
 

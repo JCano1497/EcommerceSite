@@ -23,6 +23,16 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/user-list']">Manage Users</a>
           </li>
+        </ng-container>
+        <ng-container *ngIf="!auth.isAdmin()">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/userProducts']">Poducts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/userCart']">Cart</a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="auth.isAuthenticated()">
           <li class="nav-item">
             <a class="nav-link">
               {{ auth.getUsername() }}
@@ -33,20 +43,6 @@
               Logout
             </a>
           </li>
-        </ng-container>
-        <ng-container *ngIf="auth.isAuthenticated() && !auth.isAdmin()">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/userProducts']">Poducts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/userCart']">Checkout</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link pointer" (click)="logout()">
-              Logout
-            </a>
-          </li>
-
         </ng-container>
       </ul>
     </div>

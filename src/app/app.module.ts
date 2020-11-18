@@ -18,6 +18,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { EditUserComponent } from './user-list/edit-user/edit-user.component';
 import { UserProductsComponent } from './user-products/user-products.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { UserCartComponent } from './user-cart/user-cart.component';
     EditProductComponent,
     NewProductComponent,
     UserProductsComponent,
-    UserCartComponent
+    UserCartComponent,
+    CheckoutComponent
 
   ],
   imports: [

@@ -1,5 +1,5 @@
 import { product } from './product.model';
 
-export class Cart{
-  constructor(public Product: product, public quantity: number){}
+export class Item{
+  constructor(public product: product, public quantity: number){}
 }
