@@ -2,6 +2,7 @@ import { ProductService } from './../../services/product.service';
 import { product } from './../../models/product.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-product',
@@ -10,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditProductComponent implements OnInit {
   id: string;
+
+  EditForm: FormGroup;
   product: product = {
     _id: '',
     name: '',
@@ -19,7 +22,7 @@ export class EditProductComponent implements OnInit {
     image: '',
   }
 
-  constructor(private Productservice: ProductService, private Route: ActivatedRoute) {}
+  constructor(private Productservice: ProductService, private fb: FormBuilder, private Route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.id= this.Route.snapshot.params.id;
@@ -30,6 +33,10 @@ export class EditProductComponent implements OnInit {
         this.product.price = result.price,
         this.product.quantity = result.quantity;
         this.product.company = result.company;
+    });
+  }
+  initForm(): void {
+    this.EditForm = this.fb.group({
     });
   }
 
