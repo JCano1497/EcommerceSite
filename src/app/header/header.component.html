@@ -16,7 +16,7 @@
           </li>
         </ng-container>
 
-        <ng-container *ngIf="auth.isAuthenticated() && auth.isAdmin()">
+        <ng-container *ngIf="auth.isAdmin()">
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/products-list']">Manage Products</a>
           </li>
